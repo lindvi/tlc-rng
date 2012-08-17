@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  project_name: MyString
+  project_size: 1
+
+two:
+  project_name: MyString
+  project_size: 1
+# == Schema Information
+#
+# Table name: projects
+#
+#  id           :integer         not null, primary key
+#  project_name :string(255)
+#  project_size :integer
+#  created_at   :datetime        not null
+#  updated_at   :datetime        not null
+#
+

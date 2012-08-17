@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  project_id: 1
+  part_name: MyString
+  part_size: 1
+
+two:
+  project_id: 1
+  part_name: MyString
+  part_size: 1
+# == Schema Information
+#
+# Table name: parts
+#
+#  id         :integer         not null, primary key
+#  project_id :integer
+#  part_name  :string(255)
+#  part_size  :integer
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+

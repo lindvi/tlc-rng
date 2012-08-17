@@ -1,0 +1,20 @@
+<h2> New part </h2>
+<div class="row">
+	<div class="span6 offset3">
+<%= form_for(@part) do |f| %>
+	<div class="field">
+	    <%= f.label :project_id %><br />
+	    <%= f.text_field :project_id %>
+
+	    <%= f.label :part_name %><br />
+	    <%= f.text_field :part_name %>
+
+	    <%= f.label :part_size %><br />
+	    <%= f.number_field :part_size %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %><br>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<div class="page-header">
+	<h1>Edit project</h1>
+	<h2><%= @project.project_name %></h2>
+</div>
+<div class="row">
+	<div class="span6 offset3">
+		<%= link_to "Back", project_path, class:"btn btn-small btn-secondary" %><br><br>
+		<section class="well">
+			<ul>
+				<li><b>Id:</b> <%= @project.id %></li>
+				<li><b>Name: </b> <%= @project.project_name %></li>
+				<li><b>Size: </b> <%= @project.project_size %></li>
+			</ul>
+		</section>
+		<%= form_for(@project) do |f| %>
+			    <%= f.label :project_name %>
+			    <%= f.text_field :project_name %>
+
+			    <%= f.label :project_size %>
+			    <%= f.number_field :project_size %>
+
+
+			    <%= f.submit "Save changes", class: "btn btn-large btn-success" %>
+		<% end %>
+	</div>
+</div>

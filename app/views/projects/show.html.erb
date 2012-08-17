@@ -1,0 +1,40 @@
+<div class="page-header">
+	<h1>Project</h1>
+</div>
+<div class="row">
+	<div class="span6 offset3">
+		<div class="well">
+			<b>Project id: </b><%= @project.id %><br>
+			<b>Project name: </b><%= @project.project_name %><br>
+			<b>Project size: </b><%= @project.project_size %>
+		</div>
+
+<%= link_to "Edit", edit_project_path, class:"btn btn-small btn-info" %>
+<%= link_to "CLAIM!", claim_project_path(key: "foobar"), class:"btn btn-small btn-inverse" %><br><br>
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Name  </th>
+			<th>Size </th>
+			<th>Used</th>
+			<th>Controllers</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @parts.each do |part| %>
+			<tr>
+				<td><%= part.part_name %></td>
+				<td><%= part.part_size %></td>
+				<td><%= part.used_rands %></td>
+				<td>
+					<%= link_to 'Edit', edit_part_path(part), class:"btn btn-small btn-warning" %>
+					<%= link_to 'Destroy', part, :confirm => 'Are you sure?', :method => :delete , class:"btn btn-small btn-danger"%>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<br />
+<%= link_to 'Add part', new_part_path, class: "btn btn-small btn-primary"%>
+	</div>
+</div>

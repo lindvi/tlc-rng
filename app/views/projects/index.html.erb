@@ -1,0 +1,27 @@
+<div class="page-header">
+	<h1>List of projects</h1>
+</div>
+
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Name  </th>
+			<th>Size </th>
+			<th>Controllers</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @projects.each do |project| %>
+			<tr>
+				<td><%= project.project_name %></td>
+				<td><%= project.project_size %></td>
+				<td>
+					<%= link_to 'Show', project, class:"btn btn-small btn-success" %>
+					<%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete , class:"btn btn-small btn-danger"%>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<br />
+<%= link_to 'New project', new_project_path, class: "btn btn-small btn-primary"%>

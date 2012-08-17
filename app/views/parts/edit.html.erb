@@ -1,0 +1,26 @@
+<div class="page-header">
+	<h1>Edit part</h1>
+	<h2><%= @part.part_name %></h2>
+</div>
+<div class="row">
+	<div class="span6 offset3">
+		<%= link_to "Back", project_path(@part.project_id), class:"btn btn-small btn-secondary" %><br><br>
+		<section class="well">
+			<ul>
+				<li><b>Id:</b> <%= @part.id %></li>
+				<li><b>Name: </b> <%= @part.part_name %></li>
+				<li><b>Size: </b> <%= @part.part_size %></li>
+			</ul>
+		</section>
+		<%= form_for(@part) do |f| %>
+			    <%= f.label :part_name %>
+			    <%= f.text_field :part_name %>
+
+			    <%= f.label :part_size %>
+			    <%= f.number_field :part_size %>
+
+
+			    <%= f.submit "Save changes", class: "btn btn-large btn-success" %>
+		<% end %>
+	</div>
+</div>

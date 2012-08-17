@@ -1,4 +1,16 @@
 Randomization::Application.routes.draw do
+
+  root to: 'static_pages#home'
+  resources :static_pages
+  resources :projects do
+    member do 
+      get 'claim'
+    end
+  end
+
+  resources :parts
+  resources :rands
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
