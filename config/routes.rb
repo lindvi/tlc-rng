@@ -1,6 +1,6 @@
 Randomization::Application.routes.draw do
 
-  root to: 'static_pages#home'
+  root to: 'projects#index'
   resources :static_pages
   resources :projects do
     member do 
