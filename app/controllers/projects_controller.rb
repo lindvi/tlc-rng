@@ -58,7 +58,7 @@ class ProjectsController < ApplicationController
 
 
 	def claim
-		if params[:key] == "foobar"
+		if params[:key] == "this_should_be_a_hash"
 			if params[:id].to_i == 0
 				@project = Project.find_by_project_name(params[:id])
 			else
@@ -72,6 +72,12 @@ class ProjectsController < ApplicationController
 					@part.used_rands += 1
 					@part.save
 				end
+
+				respond_to do |format|
+					format.html
+					format.json { render :json => { part_name: @part.part_name , project_id: @part.project_id } , :layout => false }
+				end
+
 			else
 				flash[:failure] = "No more slots to fill"
 				redirect_to project_path(@project)
