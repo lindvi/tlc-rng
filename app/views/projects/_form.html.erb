@@ -1,10 +1,13 @@
 <%= form_for(@project) do |f| %>
 	<div class="field">
 	    <%= f.label :project_name %><br />
-	    <%= f.text_field :project_name %>
+	    <%= f.text_field :project_name, style: "height: 40px" %>
 
 	    <%= f.label :project_size %><br />
-	    <%= f.number_field :project_size %>
+	    <%= f.number_field :project_size, style: "height: 40px" %>
+
+	    <%= f.label :increment_size %><br />
+	    <%= f.number_field :increment_size, style: "height: 40px" %>
 	</div>
 	<div class="actions">
 		<%= f.submit %>

@@ -8,8 +8,14 @@ Randomization::Application.routes.draw do
     end
   end
 
+  match '/signup', to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy'
+
   resources :parts
   resources :rands
+  resources :users
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

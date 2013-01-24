@@ -3,14 +3,13 @@
 	<div class="span6 offset3">
 <%= form_for(@part) do |f| %>
 	<div class="field">
-	    <%= f.label :project_id %><br />
-	    <%= f.text_field :project_id %>
+	    <%= f.hidden_field :project_id, :value => params[:project_id] %>
 
-	    <%= f.label :part_name %><br />
-	    <%= f.text_field :part_name %>
+	    <%= f.label :part_name %>
+	    <%= f.text_field :part_name, style: "height: 40px" %>
 
-	    <%= f.label :part_size %><br />
-	    <%= f.number_field :part_size %>
+	    <%= f.label :part_size %>
+	    <%= f.number_field :part_size, style: "height: 40px" %>
 	</div>
 	<div class="actions">
 		<%= f.submit %>

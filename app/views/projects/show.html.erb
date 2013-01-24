@@ -6,11 +6,13 @@
 		<div class="well">
 			<b>Project id: </b><%= @project.id %><br>
 			<b>Project name: </b><%= @project.project_name %><br>
-			<b>Project size: </b><%= @project.project_size %>
+			<b>Project size: </b><%= @project.project_size %><br>
+			<b>Increment size: </b><%= @project.increment_size %><br>
+			<b>Project hash: </b><%= @project.project_hash %>
 		</div>
 
 <%= link_to "Edit", edit_project_path, class:"btn btn-small btn-info" %>
-<%= link_to "CLAIM!", claim_project_path(key: "this_should_be_a_hash"), class:"btn btn-small btn-inverse" %><br><br>
+<%= link_to "Claim", claim_project_path(key: @project.project_hash), class:"btn btn-small btn-inverse" %><br><br>
 <table class="table table-condensed">
 	<thead>
 		<tr>
@@ -35,6 +37,6 @@
 	</tbody>
 </table>
 <br />
-<%= link_to 'Add part', new_part_path, class: "btn btn-small btn-primary"%>
+<%= link_to 'Add part', new_part_path(project_id: @project.id), class: "btn btn-small btn-primary"%>
 	</div>
 </div>

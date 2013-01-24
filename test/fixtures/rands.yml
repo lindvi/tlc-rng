@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: rands
+#
+#  id         :integer          not null, primary key
+#  part_id    :integer
+#  used       :boolean          default(FALSE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
@@ -7,14 +18,3 @@ one:
 two:
   part_id: 1
   used: false
-# == Schema Information
-#
-# Table name: rands
-#
-#  id         :integer         not null, primary key
-#  part_id    :integer
-#  used       :boolean
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#
-

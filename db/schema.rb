@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120817100013) do
+ActiveRecord::Schema.define(:version => 20130124094804) do
 
   create_table "parts", :force => true do |t|
     t.integer  "project_id"
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(:version => 20120817100013) do
   create_table "projects", :force => true do |t|
     t.string   "project_name"
     t.integer  "project_size"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "increment_size", :default => 0
+    t.string   "project_hash",   :default => ""
   end
 
   create_table "rands", :force => true do |t|
@@ -34,6 +36,16 @@ ActiveRecord::Schema.define(:version => 20120817100013) do
     t.boolean  "used",       :default => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.string   "remember_token"
+    t.string   "email"
+    t.boolean  "admin",           :default => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
 end
