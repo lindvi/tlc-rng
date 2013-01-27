@@ -12,6 +12,7 @@
 #
 
 class Project < ActiveRecord::Base
-  attr_accessible :project_name, :project_size, :increment_size, :project_hash
+  attr_accessible :project_name, :project_size, :increment_size, :project_hash, :user_id
   has_many :parts
+  belongs_to :user
 end

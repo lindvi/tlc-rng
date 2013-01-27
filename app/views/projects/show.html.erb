@@ -5,6 +5,7 @@
 	<div class="span6 offset3">
 		<div class="well">
 			<b>Project id: </b><%= @project.id %><br>
+			<b>Project owner: </b><%= @project.user.username rescue "Unknown" %><br>
 			<b>Project name: </b><%= @project.project_name %><br>
 			<b>Project size: </b><%= @project.project_size %><br>
 			<b>Increment size: </b><%= @project.increment_size %><br>

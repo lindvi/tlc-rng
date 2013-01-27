@@ -8,6 +8,8 @@
 
 	    <%= f.label :increment_size %><br />
 	    <%= f.number_field :increment_size, style: "height: 40px" %>
+
+	    <%= f.hidden_field :user_id, :value => current_user.id %>
 	</div>
 	<div class="actions">
 		<%= f.submit %>
