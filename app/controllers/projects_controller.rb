@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
 
-	before_filter :signed_in_user
+	before_filter :signed_in_user, except: [:claim]
+	before_filter :signed_in_user, only: [:claim] unless :has_correct_hash
+
 
 	def index
 		if current_user.admin
@@ -95,6 +97,15 @@ class ProjectsController < ApplicationController
 	end
 
 	private
+
+		def has_correct_hash
+			@project = Project.find(params[:id])
+			if !@project.nil?
+				return @project.hash == params[:key]
+			else
+				return false
+			end
+		end
 
 		def add_more
 			project = Project.find(params[:id])
