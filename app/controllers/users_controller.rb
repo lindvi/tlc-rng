@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
 	 
-	 before_filter :signed_in_user, only: [:show, :edit] 
-	 before_filter :correct_user,:unless => :admin_user, only: [:show, :edit]
-	 before_filter :admin_user, only: [:index, :destroy]
+	 before_filter :admin_user
 
 	 def index
 	 	@users = User.all
