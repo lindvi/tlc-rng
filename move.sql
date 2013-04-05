@@ -1,6 +1,5 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE "parts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "part_name" varchar(255), "part_size" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "used_rands" integer DEFAULT 0);
 INSERT INTO "parts" VALUES(1,1,'a',50,'2013-01-28 20:09:08.396484','2013-01-28 20:33:42.302734',50);
 INSERT INTO "parts" VALUES(2,1,'b',50,'2013-01-28 20:09:13.287109','2013-01-28 20:35:05.552734',50);
 INSERT INTO "parts" VALUES(3,2,'TLCA',30,'2013-01-29 18:10:08.677734','2013-02-12 09:43:03.719289',14);
@@ -8,11 +7,9 @@ INSERT INTO "parts" VALUES(4,2,'TLCB',30,'2013-01-29 18:10:16.990234','2013-02-1
 INSERT INTO "parts" VALUES(5,2,'Kontrollgrupp',20,'2013-01-29 18:10:26.537109','2013-02-08 12:20:29.181890',13);
 INSERT INTO "parts" VALUES(6,3,'Accepted',35,'2013-02-12 10:30:51.862843','2013-03-10 23:33:27.160156',30);
 INSERT INTO "parts" VALUES(7,3,'Not accepted',35,'2013-02-12 10:30:58.878468','2013-03-10 23:34:43.988281',32);
-CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_name" varchar(255), "project_size" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "increment_size" integer DEFAULT 0, "project_hash" varchar(255) DEFAULT '', "user_id" integer);
 INSERT INTO "projects" VALUES(1,'a',NULL,'2013-01-28 20:09:00.443359','2013-01-28 20:09:00.443359',10,'CBCAMLPQGNHS',1);
 INSERT INTO "projects" VALUES(2,'TLC',NULL,'2013-01-29 18:09:55.849609','2013-01-29 18:09:55.849609',20,'SHQJCYEHBNIE',1);
 INSERT INTO "projects" VALUES(3,'eScreen',500,'2013-02-12 10:30:08.206593','2013-02-26 13:44:31.274132',5,'ENYDLABSCUOW',3);
-CREATE TABLE "rands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "part_id" integer, "used" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "rands" VALUES(1,1,'t','2013-01-28 20:09:08.505859','2013-01-28 20:09:15.974609');
 INSERT INTO "rands" VALUES(2,1,'t','2013-01-28 20:09:08.521484','2013-01-28 20:09:16.193359');
 INSERT INTO "rands" VALUES(3,1,'t','2013-01-28 20:09:08.521484','2013-01-28 20:09:16.380859');
@@ -286,11 +283,9 @@ INSERT INTO "rands" VALUES(280,7,'f','2013-03-10 23:33:27.285156','2013-03-10 23
 INSERT INTO "rands" VALUES(281,7,'f','2013-03-10 23:33:27.285156','2013-03-10 23:33:27.285156');
 INSERT INTO "rands" VALUES(282,7,'f','2013-03-10 23:33:27.300781','2013-03-10 23:33:27.300781');
 INSERT INTO "rands" VALUES(283,7,'f','2013-03-10 23:33:27.300781','2013-03-10 23:33:27.300781');
-CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password_digest" varchar(255), "remember_token" varchar(255), "email" varchar(255), "admin" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "users" VALUES(1,'lindvi','$2a$10$oR5aBSY5bC0B661iYEcq8.b/NvVpCjVNDQHYsHlf4qGAtLKd58JC2','IkIBwqm_N5qsQusbrWbwAQ',NULL,'t','2013-01-28 20:08:25.412109','2013-03-05 02:31:59.627929');
 INSERT INTO "users" VALUES(2,'test','$2a$10$sBGLE3B0K4MXKU7nhZuiUe7d1CNVkChtH.JfZEHrgFpLxaRNc74Mm','X3s2xCvZIFUUVT6JYx1I0Q',NULL,'f','2013-02-13 12:14:58.791500','2013-02-13 12:14:58.791500');
 INSERT INTO "users" VALUES(3,'JLindahl','$2a$10$qxSjH.cPPzjMFfrbY87hG.l529vvPYcY5TeqP6PmGPS3BKq95x8ae','Ydd1QLuY2aT3vwTbAlZ0RQ',NULL,'f','2013-02-19 14:14:13.959468','2013-03-05 02:54:56.284179');
-CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
 INSERT INTO "schema_migrations" VALUES('20130127212023');
 INSERT INTO "schema_migrations" VALUES('20120817082341');
 INSERT INTO "schema_migrations" VALUES('20120817082437');
@@ -305,5 +300,4 @@ INSERT INTO "sqlite_sequence" VALUES('users',3);
 INSERT INTO "sqlite_sequence" VALUES('projects',3);
 INSERT INTO "sqlite_sequence" VALUES('parts',7);
 INSERT INTO "sqlite_sequence" VALUES('rands',283);
-CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
 COMMIT;

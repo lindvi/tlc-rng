@@ -1,6 +1,7 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
+
 $blue: #eaeaea;
 $gray: #eaeaea;
 $grayLight: #eaeaea;
@@ -9,23 +10,17 @@ $grayMediumLight: #eaeaea;
 $lightGreen: #dcffdb;
 $grayDarker: #eaeaea;
 $lightRed: #deacac;
-@mixin box_sizing {
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
-  box-sizing: border-box;
-}
+$grayMediumLight: #eaeaea;
 
 /* universal */
-
 
 html {
   overflow-y: scroll;
 }
 
 body {
-  padding-top: 60px;
+  margin-top: 60px;
 }
-
 
 section {
   overflow: auto;
@@ -42,14 +37,6 @@ textarea {
   }
 }
 
-.Ninput{
-  size: 16px;
-}
-
-.white {
-  background: #FFF
-
-}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,12 +50,6 @@ h1 {
   text-align: center;
 }
 
-.hleft {
-  margin-bottom: 0px;
-  text-align: left;
-
-}
-
 h2 {
   font-size: 1.7em;
   letter-spacing: -1px;
@@ -78,15 +59,6 @@ h2 {
   color: $grayLight;
 }
 
-.active{
-    color:$lightGreen;
-}
-
-.inactive{
-    color:$lightRed;
-}
-
-
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -95,7 +67,7 @@ p {
 
 /* header */
 
-#logo {
+.logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
@@ -274,11 +246,4 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
-}
-
-
-/* tables */
-
-.table tbody tr:hover{
-  background-color: #f5f5f5;
 }
