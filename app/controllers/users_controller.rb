@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	 
-	 before_filter :admin_user, :except => [:new]
+	 before_filter :admin_user, :except => [:new, :create]
 
 	 def index
 	 	@users = User.all
